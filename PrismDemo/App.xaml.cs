@@ -11,12 +11,11 @@ namespace PrismDemo
     {
         protected override Window CreateShell()
         {
-            throw new System.NotImplementedException();
+            return Container.Resolve<ShellWindowView>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            throw new System.NotImplementedException();
         }
     }
 }
