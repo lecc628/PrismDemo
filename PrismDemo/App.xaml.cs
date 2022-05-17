@@ -4,6 +4,7 @@ using Prism.Unity;
 using System.Windows;
 using System.Windows.Controls;
 using PrismDemo.Core.Regions;
+using Prism.Modularity;
 
 namespace PrismDemo
 {
@@ -25,6 +26,11 @@ namespace PrismDemo
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
 
             regionAdapterMappings.RegisterMapping<StackPanel, StackPanelRegionAdapter>();
+        }
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
     }
 }
