@@ -2,6 +2,7 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using System.Windows.Controls;
 
 namespace ModuleA
 {
@@ -16,7 +17,26 @@ namespace ModuleA
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
+            /* View composition using view discovery. */
+
             _regionManager.RegisterViewWithRegion<ViewA>("ContentRegion");
+
+            /******************************************/
+
+
+            /* View composition using view injection. */
+
+            var contentRegion = _regionManager.Regions["ContentRegion"];
+
+            var view1 = containerProvider.Resolve<ViewA>();
+            contentRegion.Add(view1);
+
+            var view2 = containerProvider.Resolve<ViewA>();
+            var tb = (TextBlock)(((Panel)(view2.Content)).Children[0]);
+            tb.FontSize = 18;
+            contentRegion.Add(view2);
+
+            /******************************************/
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
