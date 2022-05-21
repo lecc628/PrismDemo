@@ -6,12 +6,13 @@ namespace ModuleA.ViewModels
 {
     public class ViewAViewModel : BindableBase
     {
-        private string _title;
+        private string _title = "Hello from ViewAViewModel";
+        private bool _canExecute = false;
 
         public ViewAViewModel()
         {
-            _title = "Hello from ViewAViewModel";
-            ClickCommand = new DelegateCommand(Click, CanClick);
+            ClickCommand = new DelegateCommand(Click, CanClick)
+                .ObservesProperty<bool>(() => CanExecute);
         }
 
         private void Click()
@@ -21,13 +22,19 @@ namespace ModuleA.ViewModels
 
         private bool CanClick()
         {
-            return true;
+            return CanExecute;
         }
 
         public string Title
         {
             get => _title;
             set => SetProperty(ref _title, value);
+        }
+
+        public bool CanExecute
+        {
+            get => _canExecute;
+            set => SetProperty(ref _canExecute, value);
         }
 
         public DelegateCommand ClickCommand

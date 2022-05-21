@@ -32,7 +32,7 @@ namespace ModuleA
             contentRegion.Add(view1);
 
             var view2 = containerProvider.Resolve<ViewA>();
-            var tb = (TextBlock)(((Panel)(view2.Content)).Children[1]);
+            var tb = (TextBlock)(((Panel)(view2.Content)).Children[2]);
             tb.FontSize = 18;
             contentRegion.Add(view2);
 
