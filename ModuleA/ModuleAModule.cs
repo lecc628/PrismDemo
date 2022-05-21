@@ -15,6 +15,10 @@ namespace ModuleA
             _regionManager = regionManager;
         }
 
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+        }
+
         public void OnInitialized(IContainerProvider containerProvider)
         {
             /* View composition using view discovery. */
@@ -37,10 +41,6 @@ namespace ModuleA
             contentRegion.Add(view2);
 
             /******************************************/
-        }
-
-        public void RegisterTypes(IContainerRegistry containerRegistry)
-        {
         }
     }
 }
