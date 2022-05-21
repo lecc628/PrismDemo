@@ -7,7 +7,29 @@
         xmlns:local="clr-namespace:PrismDemo"
         mc:Ignorable="d"
         Title="ShellWindowView" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        <StackPanel prism:RegionManager.RegionName="ContentRegion"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="LightGreen" prism:RegionManager.RegionName="ContentRegion" Margin="10"/>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Content="Save all" Margin="10"/>
+            <TabControl Grid.Row="1" prism:RegionManager.RegionName="TabRegion" Margin="10"/>
+        </Grid>
     </Grid>
 </Window>
