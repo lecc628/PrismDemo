@@ -38,5 +38,6 @@
         </Grid>
 
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MessageInputRegion" Focusable="False" Margin="10"/>
+        <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="MessageListRegion" Focusable="False" Margin="10"/>
     </Grid>
 </Window>
