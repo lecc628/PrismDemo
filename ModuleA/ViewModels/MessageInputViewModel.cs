@@ -1,15 +1,22 @@
-﻿using Prism.Commands;
+﻿using System;
+
+using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
-using System;
+
+using PrismDemo.Core.Events;
 
 namespace ModuleA.ViewModels
 {
     public class MessageInputViewModel : BindableBase
     {
+        private readonly IEventAggregator _eventAggregator;
         private string _message = String.Empty;
 
-        public MessageInputViewModel()
+        public MessageInputViewModel(IEventAggregator eventAggregator)
         {
+            _eventAggregator = eventAggregator;
+
             SendMessageCommand = new DelegateCommand(SendMessage, CanSendMessage)
                 .ObservesProperty(() => Message);
         }
@@ -24,7 +31,7 @@ namespace ModuleA.ViewModels
 
         private void SendMessage()
         {
-            System.Windows.MessageBox.Show(Message, Message);
+            _eventAggregator.GetEvent<MessageSentEvent>().Publish(Message);
         }
 
         private bool CanSendMessage()
