@@ -4,5 +4,6 @@
     {
         public const string ContentRegion = "ContentRegion";
         public const string TabRegion = "TabRegion";
+        public const string MessageInputRegion = "MessageInputRegion";
     }
 }

@@ -16,6 +16,10 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -32,5 +36,7 @@
             <Button Content="Save all" Command="{Binding SaveAllCommand}" Margin="10"/>
             <TabControl Grid.Row="1" prism:RegionManager.RegionName="TabRegion" Margin="10"/>
         </Grid>
+
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MessageInputRegion" Focusable="False" Margin="10"/>
     </Grid>
 </Window>

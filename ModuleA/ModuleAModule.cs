@@ -22,8 +22,11 @@ namespace ModuleA
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            ViewModelLocationProvider.Register<MessageInputView, MessageInputViewModel>();
             ViewModelLocationProvider.Register<TabView, TabViewModel>();
             ViewModelLocationProvider.Register<ViewA, ViewAViewModel>();
+
+            _regionManager.RegisterViewWithRegion<MessageInputView>(ApplicationRegionNames.MessageInputRegion);
         }
 
         public void OnInitialized(IContainerProvider containerProvider)
