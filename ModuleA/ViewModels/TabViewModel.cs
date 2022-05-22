@@ -1,6 +1,9 @@
-﻿using Prism.Commands;
+﻿using System;
+
+using Prism.Commands;
 using Prism.Mvvm;
-using System;
+
+using PrismDemo.Core.Commands;
 
 namespace ModuleA.ViewModels
 {
@@ -10,10 +13,12 @@ namespace ModuleA.ViewModels
         private bool _canSave = false;
         private string _resultText = String.Empty;
 
-        public TabViewModel()
+        public TabViewModel(IApplicationCommands applicationCommands)
         {
             SaveCommand = new DelegateCommand(Save)
                 .ObservesCanExecute(() => CanSave);
+
+            applicationCommands.SaveAllCommand.RegisterCommand(SaveCommand);
         }
 
         public string Title

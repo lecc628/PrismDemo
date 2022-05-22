@@ -1,10 +1,16 @@
-﻿using Prism.Ioc;
+﻿using System.Windows;
+using System.Windows.Controls;
+
+using Prism.Ioc;
 using Prism.Regions;
 using Prism.Unity;
-using System.Windows;
-using System.Windows.Controls;
-using PrismDemo.Core.Regions;
 using Prism.Modularity;
+using Prism.Mvvm;
+
+using PrismDemo.Core.Commands;
+using PrismDemo.Core.Regions;
+using PrismDemo.Views;
+using PrismDemo.ViewModels;
 
 namespace PrismDemo
 {
@@ -19,7 +25,11 @@ namespace PrismDemo
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        { }
+        {
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
+
+            ViewModelLocationProvider.Register<ShellWindowView, ShellWindowViewModel>();
+        }
 
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
         {

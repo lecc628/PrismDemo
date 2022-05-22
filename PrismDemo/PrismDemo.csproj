@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\PrismDemo.Core\PrismDemo.Core.csproj" />
   </ItemGroup>
 
 </Project>

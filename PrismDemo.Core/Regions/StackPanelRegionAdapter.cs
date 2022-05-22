@@ -1,6 +1,7 @@
-﻿using Prism.Regions;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+
+using Prism.Regions;
 
 namespace PrismDemo.Core.Regions
 {

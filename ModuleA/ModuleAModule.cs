@@ -1,11 +1,13 @@
 ﻿using System.Windows.Controls;
+
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
+
 using ModuleA.ViewModels;
 using ModuleA.Views;
-using PrismDemo.Core;
+using PrismDemo.Core.Regions;
 
 namespace ModuleA
 {

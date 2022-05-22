@@ -1,4 +1,4 @@
-﻿namespace PrismDemo.Core
+﻿namespace PrismDemo.Core.Regions
 {
     public static class ApplicationRegionNames
     {
