@@ -11,7 +11,7 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Text="{Binding Title}" FontSize="18" Margin="5"/>
         <CheckBox Content="Can save" IsChecked="{Binding CanSave}" Margin="5"/>
-        <Button Content="Save" Margin="5" Command="{Binding SaveCommand}"/>
+        <Button Content="Save" Command="{Binding SaveCommand}" Margin="5"/>
         <TextBlock Text="{Binding ResultText}" Margin="5"/>
     </StackPanel>
 </UserControl>

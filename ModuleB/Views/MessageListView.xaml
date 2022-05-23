@@ -9,6 +9,11 @@
              d:DesignHeight="450" d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <ListBox ItemsSource="{Binding Messages}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CheckBox Content="Subscribed" IsChecked="{Binding IsSubscribed}" Command="{Binding SubscribedCommand}" Margin="0 5"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Messages}"/>
     </Grid>
 </UserControl>
