@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 using Prism.Events;
 using Prism.Mvvm;
@@ -10,9 +9,12 @@ namespace ModuleB.ViewModels
 {
     public class MessageListViewModel : BindableBase
     {
+        public const string Word_Luis = "Luis";
+
         public MessageListViewModel(IEventAggregator eventAggregator)
         {
-            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageSentEvent);
+            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageSentEvent, ThreadOption.PublisherThread, false, 
+                message => message.Contains(Word_Luis));
         }
 
         public ObservableCollection<string> Messages { get; } = new();
