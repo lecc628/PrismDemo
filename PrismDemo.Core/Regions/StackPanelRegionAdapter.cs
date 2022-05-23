@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 using Prism.Regions;
 
-namespace PrismDemo.Core.Regions
+namespace PrismDemo.Core.Names
 {
     public class StackPanelRegionAdapter : RegionAdapterBase<StackPanel>
     {

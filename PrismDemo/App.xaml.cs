@@ -8,7 +8,7 @@ using Prism.Modularity;
 using Prism.Mvvm;
 
 using PrismDemo.Core.Commands;
-using PrismDemo.Core.Regions;
+using PrismDemo.Core.Names;
 using PrismDemo.Views;
 using PrismDemo.ViewModels;
 

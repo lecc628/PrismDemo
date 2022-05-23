@@ -7,7 +7,7 @@ using Prism.Regions;
 
 using ModuleA.ViewModels;
 using ModuleA.Views;
-using PrismDemo.Core.Regions;
+using PrismDemo.Core.Names;
 
 namespace ModuleA
 {
@@ -25,6 +25,10 @@ namespace ModuleA
             ViewModelLocationProvider.Register<ViewA, ViewAViewModel>();
             ViewModelLocationProvider.Register<TabView, TabViewModel>();
             ViewModelLocationProvider.Register<MessageInputView, MessageInputViewModel>();
+
+            /* Region navigation. */
+            containerRegistry.RegisterForNavigation<ViewB>("ViewB");
+            containerRegistry.RegisterForNavigation<ViewC>("ViewC");
         }
 
         public void OnInitialized(IContainerProvider containerProvider)

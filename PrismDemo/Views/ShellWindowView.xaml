@@ -23,6 +23,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Background="LightGreen" prism:RegionManager.RegionName="ContentRegion" Margin="10"/>
@@ -39,5 +40,19 @@
 
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MessageInputRegion" Focusable="False" Margin="10"/>
         <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="MessageListRegion" Focusable="False" Margin="10"/>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Content="Navigate to View B" Command="{Binding NavigateCommand}" CommandParameter="ViewB" Padding="5 0"/>
+                <Button Content="Navigate to View C" Command="{Binding NavigateCommand}" CommandParameter="ViewC" Padding="5 0" Margin="20 0 0 0"/>
+            </StackPanel>
+
+            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="BCViewsRegion" Focusable="False" Margin="10"/>
+        </Grid>
     </Grid>
 </Window>

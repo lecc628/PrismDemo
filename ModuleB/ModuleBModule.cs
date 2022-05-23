@@ -6,7 +6,7 @@ using Prism.Regions;
 using ModuleB.Views;
 using ModuleB.ViewModels;
 
-using PrismDemo.Core.Regions;
+using PrismDemo.Core.Names;
 
 namespace ModuleB
 {
