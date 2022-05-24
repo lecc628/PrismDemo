@@ -32,7 +32,12 @@ namespace ModuleA.ViewModels
 
         private void ShowPersonDetail(Person person)
         {
-            _regionManager.RequestNavigate(ApplicationRegionNames.PersonDetailRegion, ApplicationViewNames.PersonDetailView);
+            NavigationParameters navigationParameters = new()
+            {
+                { "person", person }
+            };
+
+            _regionManager.RequestNavigate(ApplicationRegionNames.PersonDetailRegion, ApplicationViewNames.PersonDetailView, navigationParameters);
         }
 
         private void CreatePersonList()
