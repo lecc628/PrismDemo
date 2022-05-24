@@ -30,6 +30,7 @@ namespace ModuleA
             containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>(ApplicationViewNames.ViewB);
             containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>(ApplicationViewNames.ViewC);
             containerRegistry.RegisterForNavigation<PersonDetailView, PersonDetailViewModel>(ApplicationViewNames.PersonDetailView);
+            containerRegistry.RegisterForNavigation<PersonListView, PersonListViewModel>(ApplicationViewNames.PersonListView);
         }
 
         public void OnInitialized(IContainerProvider containerProvider)
@@ -70,7 +71,7 @@ namespace ModuleA
 
             /******************************************/
 
-            _regionManager.RequestNavigate(ApplicationRegionNames.PersonRegion, ApplicationViewNames.PersonDetailView);
+            _regionManager.RequestNavigate(ApplicationRegionNames.PersonRegion, ApplicationViewNames.PersonListView);
         }
     }
 }

@@ -6,9 +6,9 @@ namespace ModuleA.ViewModels
 {
     public class PersonDetailViewModel : BindableBase
     {
-        private Person _selectedPerson = Person.PersonByDefault;
+        private Person? _selectedPerson = null;
 
-        public Person SelectedPerson
+        public Person? SelectedPerson
         {
             get { return _selectedPerson; }
             set { SetProperty(ref _selectedPerson, value); }
