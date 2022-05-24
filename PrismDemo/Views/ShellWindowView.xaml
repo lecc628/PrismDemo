@@ -54,5 +54,7 @@
 
             <ContentControl Grid.Row="1" prism:RegionManager.RegionName="BCViewsRegion" Focusable="False" Margin="10"/>
         </Grid>
+
+        <ContentControl Grid.Row="1" Grid.Column="2" prism:RegionManager.RegionName="PersonRegion" Focusable="False" Margin="10"/>
     </Grid>
 </Window>

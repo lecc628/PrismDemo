@@ -27,8 +27,9 @@ namespace ModuleA
             ViewModelLocationProvider.Register<MessageInputView, MessageInputViewModel>();
 
             /* Region navigation. */
-            containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>("ViewB");
-            containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>("ViewC");
+            containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>(ApplicationViewNames.ViewB);
+            containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>(ApplicationViewNames.ViewC);
+            containerRegistry.RegisterForNavigation<PersonDetailView, PersonDetailViewModel>(ApplicationViewNames.PersonDetailView);
         }
 
         public void OnInitialized(IContainerProvider containerProvider)
@@ -50,7 +51,7 @@ namespace ModuleA
 
             var view2 = containerProvider.Resolve<ViewA>();
             var tb = (TextBlock)(((Panel)(view2.Content)).Children[2]);
-            tb.FontSize = 18;
+            tb.FontSize = 12;
             contentRegion.Add(view2);
 
             /******************************************/
@@ -68,6 +69,8 @@ namespace ModuleA
             tabRegion.Add(tabView3);
 
             /******************************************/
+
+            _regionManager.RequestNavigate(ApplicationRegionNames.PersonRegion, ApplicationViewNames.PersonDetailView);
         }
     }
 }
