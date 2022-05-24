@@ -2,7 +2,7 @@
 {
     public static class ApplicationViewNames
     {
-        public static string ViewB = nameof(ViewB);
-        public static string ViewC = nameof(ViewC);
+        public const string ViewB = nameof(ViewB);
+        public const string ViewC = nameof(ViewC);
     }
 }

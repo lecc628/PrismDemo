@@ -27,8 +27,8 @@ namespace ModuleA
             ViewModelLocationProvider.Register<MessageInputView, MessageInputViewModel>();
 
             /* Region navigation. */
-            containerRegistry.RegisterForNavigation<ViewB>("ViewB");
-            containerRegistry.RegisterForNavigation<ViewC>("ViewC");
+            containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>("ViewB");
+            containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>("ViewC");
         }
 
         public void OnInitialized(IContainerProvider containerProvider)

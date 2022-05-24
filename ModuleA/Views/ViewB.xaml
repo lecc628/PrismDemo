@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:ModuleA.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="View B" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="View B" FontSize="32"/>
+        <TextBlock Text="{Binding PageViewedCountAsString}" FontSize="18" HorizontalAlignment="Center"/>
+    </StackPanel>
 </UserControl>
