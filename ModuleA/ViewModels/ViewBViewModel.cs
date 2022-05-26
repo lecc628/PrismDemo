@@ -19,14 +19,14 @@ namespace ModuleA.ViewModels
             private set { SetProperty(ref _pageViewedCountAsString, value); }
         }
 
-        public void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            PageViewedCountAsString = $"{++_pageViewedCount}";
-        }
-
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            PageViewedCountAsString = $"{++_pageViewedCount}";
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)

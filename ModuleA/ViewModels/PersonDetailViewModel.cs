@@ -15,14 +15,23 @@ namespace ModuleA.ViewModels
             set { SetProperty(ref _selectedPerson, value); }
         }
 
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            var person = navigationContext.Parameters.GetValue<Person>("person");
+
+            if ((SelectedPerson is not null) && (SelectedPerson.LastName == person.LastName))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             SelectedPerson = navigationContext.Parameters.GetValue<Person>("person");
-        }
-
-        public bool IsNavigationTarget(NavigationContext navigationContext)
-        {
-            return true;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
