@@ -1,9 +1,12 @@
-﻿using Prism.Mvvm;
+﻿using System;
+using System.Windows;
+
+using Prism.Mvvm;
 using Prism.Regions;
 
 namespace ModuleA.ViewModels
 {
-    public class ViewBViewModel : BindableBase, INavigationAware
+    public class ViewBViewModel : BindableBase, IConfirmNavigationRequest
     {
         private int _pageViewedCount = 0;
         private string _pageViewedCountAsString = string.Empty;
@@ -31,5 +34,18 @@ namespace ModuleA.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         { }
+
+        public void ConfirmNavigationRequest(NavigationContext navigationContext, Action<bool> continuationCallback)
+        {
+            var result = true;
+
+            if (MessageBox.Show("Do you want to navigate?", "Navigate?", MessageBoxButton.YesNo,
+                MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.No)
+            {
+                result = false;
+            }
+
+            continuationCallback(result);
+        }
     }
 }
