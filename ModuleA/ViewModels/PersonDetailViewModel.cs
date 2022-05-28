@@ -11,15 +11,15 @@ namespace ModuleA.ViewModels
 
         public Person? SelectedPerson
         {
-            get { return _selectedPerson; }
-            set { SetProperty(ref _selectedPerson, value); }
+            get => _selectedPerson;
+            set => SetProperty(ref _selectedPerson, value);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             var person = navigationContext.Parameters.GetValue<Person>("person");
 
-            if ((SelectedPerson is not null) && (SelectedPerson.LastName == person.LastName))
+            if ((SelectedPerson is not null) && (person is not null) && (SelectedPerson.LastName == person.LastName))
             {
                 return true;
             }

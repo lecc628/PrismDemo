@@ -31,6 +31,8 @@ namespace ModuleA
             containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>(ApplicationViewNames.ViewC);
             containerRegistry.RegisterForNavigation<PersonDetailView, PersonDetailViewModel>(ApplicationViewNames.PersonDetailView);
             containerRegistry.RegisterForNavigation<PersonListView, PersonListViewModel>(ApplicationViewNames.PersonListView);
+            containerRegistry.RegisterForNavigation<PersonDetailWithJournalView, PersonDetailWithJournalViewModel>(ApplicationViewNames.PersonDetailWithJournalView);
+            containerRegistry.RegisterForNavigation<PersonListWithJournalView, PersonListWithJournalViewModel>(ApplicationViewNames.PersonListWithJournalView);
         }
 
         public void OnInitialized(IContainerProvider containerProvider)
@@ -72,6 +74,10 @@ namespace ModuleA
             /******************************************/
 
             _regionManager.RequestNavigate(ApplicationRegionNames.PersonRegion, ApplicationViewNames.PersonListView);
+
+            /******************************************/
+
+            _regionManager.RequestNavigate(ApplicationRegionNames.PersonWithNavigationJournalRegion, ApplicationViewNames.PersonListWithJournalView);
         }
     }
 }

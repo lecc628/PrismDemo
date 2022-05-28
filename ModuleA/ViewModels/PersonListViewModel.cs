@@ -16,6 +16,7 @@ namespace ModuleA.ViewModels
         public PersonListViewModel(IRegionManager regionManager)
         {
             _regionManager = regionManager;
+
             CreatePersonList();
             PersonSelectedCommand = new DelegateCommand<Person>(ShowPersonDetail);
         }

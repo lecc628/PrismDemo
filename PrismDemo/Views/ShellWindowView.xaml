@@ -24,6 +24,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Background="LightGreen" prism:RegionManager.RegionName="ContentRegion" Margin="10"/>
@@ -56,5 +57,7 @@
         </Grid>
 
         <ContentControl Grid.Row="1" Grid.Column="2" prism:RegionManager.RegionName="PersonRegion" Focusable="False" Margin="10"/>
+
+        <ContentControl Grid.Column="3" prism:RegionManager.RegionName="PersonWithNavigationJournalRegion" Focusable="False" Margin="10"/>
     </Grid>
 </Window>
