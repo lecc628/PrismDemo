@@ -11,6 +11,8 @@ using PrismDemo.Core.Commands;
 using PrismDemo.Core.Names;
 using PrismDemo.Views;
 using PrismDemo.ViewModels;
+using PrismDemo.Dialogs.Views;
+using PrismDemo.Dialogs.ViewModels;
 
 namespace PrismDemo
 {
@@ -29,6 +31,8 @@ namespace PrismDemo
             containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             ViewModelLocationProvider.Register<ShellWindowView, ShellWindowViewModel>();
+
+            containerRegistry.RegisterDialog<MessageDialogView, MessageDialogViewModel>(ApplicationViewNames.MessageDialogView);
         }
 
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)

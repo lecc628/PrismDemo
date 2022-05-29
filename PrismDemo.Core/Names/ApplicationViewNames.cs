@@ -8,5 +8,6 @@
         public const string PersonListView = nameof(PersonListView);
         public const string PersonDetailWithJournalView = nameof(PersonDetailWithJournalView);
         public const string PersonListWithJournalView = nameof(PersonListWithJournalView);
+        public const string MessageDialogView = nameof(MessageDialogView);
     }
 }
