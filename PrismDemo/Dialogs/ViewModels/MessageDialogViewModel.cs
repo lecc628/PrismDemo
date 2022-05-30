@@ -1,14 +1,15 @@
-﻿using Prism.Mvvm;
+﻿using System;
+
+using Prism.Mvvm;
 using Prism.Commands;
 using Prism.Services.Dialogs;
-using System;
 
 namespace PrismDemo.Dialogs.ViewModels
 {
     public class MessageDialogViewModel : BindableBase, IDialogAware
     {
         private string _message = string.Empty;
-        public event Action<IDialogResult> RequestClose;
+        public event Action<IDialogResult> RequestClose = _ => { };
 
         public MessageDialogViewModel()
         {
