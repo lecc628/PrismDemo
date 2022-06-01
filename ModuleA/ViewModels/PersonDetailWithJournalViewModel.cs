@@ -1,5 +1,5 @@
-﻿using Prism.Regions;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
+using Prism.Regions;
 using Prism.Commands;
 
 using PrismDemo.Core.Model;

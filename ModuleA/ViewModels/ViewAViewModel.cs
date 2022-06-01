@@ -1,5 +1,5 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
+using Prism.Commands;
 
 namespace ModuleA.ViewModels
 {

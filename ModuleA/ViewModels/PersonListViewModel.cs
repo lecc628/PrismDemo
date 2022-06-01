@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 
 using Prism.Mvvm;
-using Prism.Commands;
 using Prism.Regions;
+using Prism.Commands;
 
 using PrismDemo.Core.Model;
 using PrismDemo.Core.Names;

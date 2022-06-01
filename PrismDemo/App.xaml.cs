@@ -2,17 +2,17 @@
 using System.Windows.Controls;
 
 using Prism.Ioc;
-using Prism.Regions;
 using Prism.Unity;
 using Prism.Modularity;
 using Prism.Mvvm;
+using Prism.Regions;
 
-using PrismDemo.Core.Commands;
 using PrismDemo.Core.Names;
-using PrismDemo.Views;
-using PrismDemo.ViewModels;
+using PrismDemo.Core.Commands;
 using PrismDemo.Dialogs.Views;
 using PrismDemo.Dialogs.ViewModels;
+using PrismDemo.Views;
+using PrismDemo.ViewModels;
 
 namespace PrismDemo
 {

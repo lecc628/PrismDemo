@@ -1,10 +1,11 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Commands;
 using Prism.Services.Dialogs;
 
-using PrismDemo.Core.Commands;
 using PrismDemo.Core.Names;
+using PrismDemo.Core.Commands;
+using PrismDemo.Core.Dialogs;
 
 namespace PrismDemo.ViewModels
 {
@@ -44,14 +45,9 @@ namespace PrismDemo.ViewModels
 
         private void ShowDialog()
         {
-            var parameters = new DialogParameters
-            {
-                { "Message", "This is my dialog!" }
-            };
-
             MessageReceived = string.Empty;
 
-            _dialogService.ShowDialog(ApplicationViewNames.MessageDialogView, parameters, result => {
+            _dialogService.ShowMessageDialog("This is my dialog!", result => {
                 if (result.Result == ButtonResult.OK)
                 {
                     MessageReceived = result.Parameters.GetValue<string>("MessageOKButtonClicked");

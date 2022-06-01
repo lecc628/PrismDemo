@@ -3,10 +3,10 @@ using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
 
+using PrismDemo.Core.Names;
+
 using ModuleB.Views;
 using ModuleB.ViewModels;
-
-using PrismDemo.Core.Names;
 
 namespace ModuleB
 {

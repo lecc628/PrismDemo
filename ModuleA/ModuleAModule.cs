@@ -5,9 +5,9 @@ using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
 
+using PrismDemo.Core.Names;
 using ModuleA.ViewModels;
 using ModuleA.Views;
-using PrismDemo.Core.Names;
 
 namespace ModuleA
 {

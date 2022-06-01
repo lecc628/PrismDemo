@@ -1,7 +1,7 @@
 ﻿using System;
 
-using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Commands;
 
 using PrismDemo.Core.Commands;
 

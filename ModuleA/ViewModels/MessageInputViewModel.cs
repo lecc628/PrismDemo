@@ -1,8 +1,8 @@
 ﻿using System;
 
+using Prism.Mvvm;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Mvvm;
 
 using PrismDemo.Core.Events;
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
-using Prism.Regions;
 using Prism.Mvvm;
+using Prism.Regions;
 using Prism.Commands;
 
 using PrismDemo.Core.Model;
