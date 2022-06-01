@@ -3,16 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
              xmlns:local="clr-namespace:PrismDemo.Dialogs.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding Message}" MinWidth="200" Margin="10"/>
+        <TextBlock Text="{Binding Message}" Margin="10"/>
         <Button Grid.Row="1" Content="OK" Command="{Binding OKDialogCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Height="25" Margin="10"/>
     </Grid>
 </UserControl>
